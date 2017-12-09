@@ -48,7 +48,7 @@ public class MapsMergerTest {
 
     Map<String, String> resultMap = merger.merge(map1, map2, (key1, key2) -> key1 + key2);
     assert "onefour".equals(resultMap.get("key1")) : "Unexpected value";
-    log(map2 + ", " + map1, resultMap, "a + b", "merge");
+    log(map1 + ", " + map2, resultMap, "a + b", "merge");
 
     resultMap = merger.merge(map2, map1, (key1, key2) -> key1 + key2);
     assert "fourone".equals(resultMap.get("key1")) : "Unexpected value";

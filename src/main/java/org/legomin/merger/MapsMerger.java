@@ -50,7 +50,7 @@ public class MapsMerger<T, U> {
    * @param behavior - associative merging operation
    * @return - merged map
    */
-  public Map<T, U> mergeAssociative(List<Map<T, U>> maps, AssociativeBiFunction<U> behavior) {
+  public Map<T, U> mergeAssociative(List<Map<T, U>> maps, BiFunction<U, U, U> behavior) {
     return merge(maps, behavior, true);
   }
 
@@ -62,7 +62,7 @@ public class MapsMerger<T, U> {
    * @param behavior - not associative merging operation
    * @return - merged map
    */
-  public Map<T, U> mergeNotAssociative(List<Map<T, U>> maps, NotAssociativeBiFunction<U> behavior) {
+  public Map<T, U> mergeNotAssociative(List<Map<T, U>> maps, BiFunction<U, U, U> behavior) {
     return merge(maps, behavior, false);
   }
 
